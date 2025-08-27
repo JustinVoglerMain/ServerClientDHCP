@@ -10,22 +10,24 @@ an argument.
 6. The server will validate the fromIPAddr is 0.0.0.0
 7. The server will validate the toIPAddr is 255.255.255.255
 8. If all these conditions are met, the server will
-a. broadcast back an offer to the client.
-b. Set the fromIPAddr to the server’s IP address
-c. Set the opcode to 2
+  a. broadcast back an offer to the client.
+  b. Set the fromIPAddr to the server’s IP address
+  c. Set the opcode to 2
+
+
 You will write a client in C.
 1. The client will take one argument, the port on which the server is running
 2. The client will create a DGRAM socket
 3. The client will set the socket to allow broadcast (see code below).
 4. The client will
-a. Set the opcode to 1
-b. Set the fromIPAddr to 0.0.0.0
-c. Set the toIPAddr to 255.255.255.255
-d. Set the ciaddr and yiaddr to 0.0.0.0
-e. Set the transID to a randoom number
-f. Broadcast the request to the server
+  a. Set the opcode to 1
+  b. Set the fromIPAddr to 0.0.0.0
+  c. Set the toIPAddr to 255.255.255.255
+  d. Set the ciaddr and yiaddr to 0.0.0.0
+  e. Set the transID to a randoom number
+  f. Broadcast the request to the server
 5. The client will then wait for a response, and:
-a. The client will validate the op code is a 2
-b. The server will validate the toIPAddr is 255.255.255.255
+  a. The client will validate the op code is a 2
+  b. The server will validate the toIPAddr is 255.255.255.255
 6. If all these conditions are met, the server will
-a. Print all the fields in the packet
+  a. Print all the fields in the packet
